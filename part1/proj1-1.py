@@ -89,16 +89,44 @@ def sendingToServer(packet, listOfIPs):
     return responsePacket
 
 def unpackingResponse(packet):
-    
-    print(f'Response packet: {packet}')
 
+    print(f'Response packet: {packet}')
+    
     # We want to extract the Resource Record of Type A, nominating a valid TLD DNS server
     # We know that Root DNS Servers return a list of TLD servers, given a query. So we can grab the first one
     # Need to iterate to the Answer section in the response packet, and inspect the resource records there
-
-    # Header Section
+    
+    # Print out the header section and its contents
     print('\n--Contents of Header Section--')
+    unpackingHeader(packet)
 
+    # Print out the question section and its contents
+ 
+    
+    # # Skipping over Question Section
+    # offset = 12
+    # for _ in range (numOfQuestions):
+    #     while int.from_bytes(packet[offset], "big") != 0:
+    #         offset += 1
+    #     offset += 5
+
+    # # Extracting new IPs from Answer Section
+    # listOfIPs = []
+    # for _ in range (numOfAnswers):
+    #     r_type, r_class, ttl, r_data_length = struct.unpack('!HHIH', packet[offset:offset + 10])
+
+    #     # Check if the answer is an A record (IPv4)
+    #     if r_type == 1 and r_class == 1:
+    #         listOfIPs.append(socket.inet_ntoa(packet[offset + 10:offset + 14]))
+
+    #     # Move to the next answer
+    #     offset += 10 + r_data_length
+
+    # return listOfIPs
+
+# Method for unpacking Header section of a DNS message
+def unpackingHeader(packet):
+    
     # Ensure the Identification matches the DNS query we built 
     id_values = struct.unpack('BB', packet[:2])
     identification = ''.join(chr(value) for value in id_values)
@@ -129,28 +157,6 @@ def unpackingResponse(packet):
     print(f'\tNumber of Authority RR\'s: {numOfAuthorityRRs[1]}')
     numOfAdditionalRRs = struct.unpack('BB', packet[10:12])
     print(f'\tNumber of Additional RR\'s: {numOfAdditionalRRs[1]}')
-
-
-    # # Skipping over Question Section
-    # offset = 12
-    # for _ in range (numOfQuestions):
-    #     while int.from_bytes(packet[offset], "big") != 0:
-    #         offset += 1
-    #     offset += 5
-
-    # # Extracting new IPs from Answer Section
-    # listOfIPs = []
-    # for _ in range (numOfAnswers):
-    #     r_type, r_class, ttl, r_data_length = struct.unpack('!HHIH', packet[offset:offset + 10])
-
-    #     # Check if the answer is an A record (IPv4)
-    #     if r_type == 1 and r_class == 1:
-    #         listOfIPs.append(socket.inet_ntoa(packet[offset + 10:offset + 14]))
-
-    #     # Move to the next answer
-    #     offset += 10 + r_data_length
-
-    # return listOfIPs
 
 if __name__ == "__main__":
 
