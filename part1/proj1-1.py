@@ -3,7 +3,7 @@ import socket
 import struct
 
 # Construct a DNS Query (packet request) given passed-in parameters
-def packQuery():
+def packQuery(question):
 
     # Declare header section, fill in values field-to-field (12 bytes total)
     headerSection = bytearray(12)
@@ -33,10 +33,7 @@ def packQuery():
     print(f'Header section of DNS Query: {headerSection}')
 
     # Declare Question Section 
-    # Encoded tmz.com to 3 tmz 3 com 0
-    # To binary 0000 0011 0111 0100 0110 1101 0111 1010 0000 0011 0110 0011 0110 1111 0110 1101 0000 0000
-    # To hex \x03\x74\x6D\x7A\x03\x63\x6F\x6D\x00
-    questionSection = bytearray(b'\x03\x74\x6D\x7A\x03\x63\x6F\x6D\x00')
+    questionSection = question
 
     # QType is Type A: 0000 0000 0000 0001 
     questionSection.extend(b'\x00\x01')
@@ -45,15 +42,8 @@ def packQuery():
     questionSection.extend(b'\x00\x01')
 
     print(f'Question section of DNS Query: {questionSection}')
-    
-    # Declare Answer Section 
-    answerSection = bytearray(b'')
 
-    # Declare Authority Section 
-    authoritySection = bytearray(b'')
-
-    # Declare Additional Information Section 
-    additionalInfoSection = bytearray(b'')
+    # Answer, Authority, and Additional sections are not applicable in the DNS query
 
     # Assembling the packet
     dnsPacket = bytearray(b'')
@@ -97,32 +87,63 @@ def unpackingResponse(packet):
     # Need to iterate to the Answer section in the response packet, and inspect the resource records there
     
     # Print out the header section and its contents
+    # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs
     print('\n--Contents of Header Section--')
-    unpackingHeader(packet)
+    aa, numOf = unpackingHeader(packet)
 
     # Print out the question section and its contents
  
+    # Skipping Header Section. Fixed 12 bytes 
+    offset = 12
+
+    # Skipping over Question Section
+    for _ in range (numOf[0]):
+        while packet[offset] != 0:
+            offset += 1
+        # Skipping Null Byte, Qtype (2 Bytes), and Qclass (2 Bytes)
+        offset += 5
+
+    if aa == 1:
+        offset, listOfIPs = extractRRData(numOf[1], packet, offset)
+    else:
+        offset, listOfIPs = extractRRData(numOf[2], packet, offset)
     
-    # # Skipping over Question Section
-    # offset = 12
-    # for _ in range (numOfQuestions):
-    #     while int.from_bytes(packet[offset], "big") != 0:
-    #         offset += 1
-    #     offset += 5
+    print(listOfIPs)
+    return listOfIPs
 
-    # # Extracting new IPs from Answer Section
-    # listOfIPs = []
-    # for _ in range (numOfAnswers):
-    #     r_type, r_class, ttl, r_data_length = struct.unpack('!HHIH', packet[offset:offset + 10])
+def extractRRData(numOf, packet, offset):
+    # Extracting new IPs from RRs
+    listOfIPs = []
+    # In the range of the number of resource records (could be Answer or Authoritative)
+    for _ in range (numOf):
+        # Unpack the first 12 bytes of a given RR. The 4-tuple, and the data length of the last value (our Name Server)
+        r_name, r_type, r_class, ttl, r_data_length = struct.unpack('!HHHIH', packet[offset:offset + 12])
 
-    #     # Check if the answer is an A record (IPv4)
-    #     if r_type == 1 and r_class == 1:
-    #         listOfIPs.append(socket.inet_ntoa(packet[offset + 10:offset + 14]))
+        # Use the data length from the previous unpacking to parse the Name Server
+        r_data = struct.unpack(packet[offset + 12: offset + r_data_length])
 
-    #     # Move to the next answer
-    #     offset += 10 + r_data_length
+        # Check if the answer is an A record (IPv4)
+        if r_type == 1 and r_class == 1:
+            listOfIPs.append(socket.inet_ntoa(packet[offset + 12: offset + r_data_length]))
+        # Otherwise, check if it is an NS record (no IP, just domain)
+        elif r_type == 2 and r_class == 1:
+            # Since it's NS, we need to send an additional DNS query to the `r_data` domain name to resolve it's IP!
+            
+            # Encode `r_data` per the QName conventions
+            nsQuery = packQuery()
 
-    # return listOfIPs
+            # Send this DNS query to the server
+            
+
+            # Analyze the response from the server
+
+            # Append the returned IP
+
+
+        # Move to the next answer
+        offset += 12 + r_data_length
+
+    return offset, listOfIPs
 
 # Method for unpacking Header section of a DNS message
 def unpackingHeader(packet):
@@ -149,19 +170,55 @@ def unpackingHeader(packet):
     print(f'\t\tZ flag: {binary_values[9:12]}')
     print(f'\t\tRCODE: {binary_values[12:16]}')
 
+    numOf = []
+
     numOfQuestions = struct.unpack('BB', packet[4:6])
+    numOf.append(numOfQuestions[1])
     print(f'\tNumber of Queries: {numOfQuestions[1]}')
+
     numOfAnswerRRs = struct.unpack('BB', packet[6:8])
+    numOf.append(numOfAnswerRRs[1])
     print(f'\tNumber of Answers: {numOfAnswerRRs[1]}')
+
     numOfAuthorityRRs = struct.unpack('BB', packet[8:10])
+    numOf.append(numOfAuthorityRRs[1])
     print(f'\tNumber of Authority RR\'s: {numOfAuthorityRRs[1]}')
+    
     numOfAdditionalRRs = struct.unpack('BB', packet[10:12])
+    # numOf.append(numOfAdditionalRRs[1])
     print(f'\tNumber of Additional RR\'s: {numOfAdditionalRRs[1]}')
+
+    return aa, numOf
+
+# def makingHTTPRequest(ip):
+
+#     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+#     s.connect(ip, 80)
+    
+#     request = f"GET/HTTP/2\r\nHost: {ip}\r\n\r\n"
+
+#     s.sendall(request.encode())
+
+#     response = b""
+#     while True:
+#         data = s.recv(1024)
+#         if not data:
+#             break
+#         response += data
+
+#     s.close()
+
+#     return response
 
 if __name__ == "__main__":
 
     # Build our DNS query for the root DNS server
-    dnsQuery = packQuery()
+
+    # Encoded tmz.com to 3 tmz 3 com 0
+    # To binary 0000 0011 0111 0100 0110 1101 0111 1010 0000 0011 0110 0011 0110 1111 0110 1101 0000 0000
+    # To hex \x03\x74\x6D\x7A\x03\x63\x6F\x6D\x00
+    question = bytearray(b'\x03\x74\x6D\x7A\x03\x63\x6F\x6D\x00')
+    dnsQuery = packQuery(question)
 
     rootServers = ['198.41.0.4', '199.9.14.201', 
                    '192.33.4.12', '199.7.91.13', 
