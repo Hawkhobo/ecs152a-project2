@@ -25,7 +25,7 @@ def unpackingResponse(packet):
         offset += 5
 
     # Do we have any Answer resource records that are authoritative?
-    if aa == 1:
+    if aa == '1':
         offset, listOfIPs = extractRRData(numOf[1], packet, offset)
     # If not, iterate over the other RR's
     else:
@@ -80,7 +80,7 @@ def unpackingHeader(packet):
     numOf.append(numOfAdditionalRRs[1])
     print(f'\tNumber of Additional RR\'s: {numOfAdditionalRRs[1]}')
 
-    return numOf
+    return aa, numOf
 
 # If it is an Answer, Authority, or Additional section, run a RR look-through method
 def extractRRData(numOf, packet, offset):
