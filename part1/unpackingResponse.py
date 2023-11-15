@@ -10,6 +10,7 @@ def unpackingResponse(packet):
     # From Wireshark, can observe that the TLD IP's are cached in the root DNS server. In the Additional section! 
     
     # Print out the header section and its contents
+    # aa is the Authoritative Answer flag. Tells us if we've found tmz.com's IP 
     # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs
     print('\n--Contents of Header Section--')
     aa, numOf = unpackingHeader(packet)
