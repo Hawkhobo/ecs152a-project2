@@ -7,31 +7,36 @@ def unpackingResponse(packet):
     
     # We want to extract the Resource Record of Type A, nominating a valid TLD DNS server
     # We know that Root DNS Servers return a list of TLD servers, given a query. So we can grab the first one
-    # Need to iterate to the Answer section in the response packet, and inspect the resource records there
+    # From Wireshark, can observe that the TLD IP's are cached in the root DNS server. In the Additional section! 
     
     # Print out the header section and its contents
     # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs
     print('\n--Contents of Header Section--')
     aa, numOf = unpackingHeader(packet)
-
-    # Print out the question section and its contents
  
     # Skipping Header Section. Fixed 12 bytes 
     offset = 12
 
-    # Skipping over Question Section
+    # Skipping over Question Section. Each for iter is a separate Query
     for _ in range (numOf[0]):
+        # Iterate past Queries until we hit our null byte
         while packet[offset] != 0:
             offset += 1
         # Skipping Null Byte, Qtype (2 Bytes), and Qclass (2 Bytes)
         offset += 5
 
+    # Do we have an Answer section?
     if aa == 1:
         offset, listOfIPs = extractRRData(numOf[1], packet, offset)
+    # If not, iterate over the other RR's
     else:
+        # Iterate over the Authority section, returning any Type A RR IP's
         offset, listOfIPs = extractRRData(numOf[2], packet, offset)
-    
-    print(listOfIPs)
+        # Iterate over the Additional section, returning any Type A RR IP's
+        offset, listOfIPs2 = extractRRData(numOf[3], packet, offset)
+        # Combine Type A RR's of Authority and Additional
+        listOfIPs.append(listOfIPs2)
+
     return listOfIPs
 
 # Method for unpacking Header section of a DNS message
@@ -74,7 +79,7 @@ def unpackingHeader(packet):
     print(f'\tNumber of Authority RR\'s: {numOfAuthorityRRs[1]}')
     
     numOfAdditionalRRs = struct.unpack('BB', packet[10:12])
-    # numOf.append(numOfAdditionalRRs[1])
+    numOf.append(numOfAdditionalRRs[1])
     print(f'\tNumber of Additional RR\'s: {numOfAdditionalRRs[1]}')
 
     return aa, numOf
@@ -82,19 +87,24 @@ def unpackingHeader(packet):
 def extractRRData(numOf, packet, offset):
     # Extracting new IPs from RRs
     listOfIPs = []
-    # In the range of the number of resource records (could be Answer or Authoritative)
+    # In the range of the number of resource records (could be Answer, Authoritative, or Additional)
     for _ in range (numOf):
+
         # Unpack the first 12 bytes of a given RR. The 4-tuple, and the data length of the last value (our Name Server)
         r_name, r_type, r_class, ttl, r_data_length = struct.unpack('!HHHIH', packet[offset:offset + 12])
 
-        # Use the data length from the previous unpacking to parse the Name Server
-        r_data = struct.unpack(packet[offset + 12: offset + r_data_length])
+        # Beginning of RDATA in current RR
+        r_data_start = offset + 12
+        # end of RDATA in current RR
+        r_data_end = r_data_start + r_data_length
 
-        # Check if the answer is an A record (IPv4)
+        # Check if the answer is a Type A RR (IPv4). Only returning IPv4
+        # Any other type is passed over, and we continue to unpack the response
         if r_type == 1 and r_class == 1:
-            listOfIPs.append(socket.inet_ntoa(packet[offset + 12: offset + r_data_length]))
+            # Unpack RDATA, use socket method to store as IPv4 string
+            listOfIPs.append(socket.inet_ntoa(packet[r_data_start: r_data_end]))
 
-        # Move to the next answer
+        # Move to the next RR
         offset += 12 + r_data_length
 
     return offset, listOfIPs

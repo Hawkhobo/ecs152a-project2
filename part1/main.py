@@ -47,15 +47,15 @@ if __name__ == "__main__":
                    '193.0.14.129', '199.7.83.42', 
                    '202.12.27.33']
 
-    # Send query to the root DNS server
+    # Send query to a root DNS server
     dnsResponse = sendingToServer(dnsQuery, rootServers)
 
     # Unpack response of root DNS
     ipTLD = unpackingResponse(dnsResponse)
 
-    # Send query to the TLD DNS server
+    # Send query to a TLD DNS server
 
-    # Send query to the Authoritative DNS server
+    # Send query to an Authoritative DNS server
 
     
     # dnsResponse = sendingToServer(dnsQuery, ipTLD)
