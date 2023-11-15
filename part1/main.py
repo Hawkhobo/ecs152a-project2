@@ -2,6 +2,7 @@
 from packQuery import packQuery
 from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
+from makeHTTPRequest import makeHTTPRequest
 
 if __name__ == "__main__":
 
@@ -41,9 +42,9 @@ if __name__ == "__main__":
     tmzIPs = unpackingResponse(dnsResponse)
 
     # Arbitrarily grab one of these IPs. Can choose any; all duplicate servers of TMZ.com
-    tmsIP = tmzIPs[0]
+    tmzIP = tmzIPs[0]
 
-    #
-
+    # Build an HTTP GET packet for , and make the request
+    httpRequest = makeHTTPRequest(tmzIP)
 
     
