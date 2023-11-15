@@ -5,13 +5,11 @@ def unpackingResponse(packet):
 
     print(f'Response packet: {packet}')
     
-    # We want to extract the Resource Record of Type A, nominating a valid TLD DNS server
-    # We know that Root DNS Servers return a list of TLD servers, given a query. So we can grab the first one
-    # From Wireshark, can observe that the TLD IP's are cached in the root DNS server. In the Additional section! 
+    # Extract a Resource Record of Type A, nominating a valid DNS server
+    # DNS servers return a list of the next server-type in the hierarchy
     
     # Print out the header section and its contents
-    # aa is the Authoritative Answer flag. Tells us if we've found tmz.com's IP 
-    # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs
+    # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs, [3] Additional RRs
     print('\n--Contents of Header Section--')
     aa, numOf = unpackingHeader(packet)
  
@@ -26,7 +24,7 @@ def unpackingResponse(packet):
         # Skipping Null Byte, Qtype (2 Bytes), and Qclass (2 Bytes)
         offset += 5
 
-    # Do we have an Answer section?
+    # Do we have any Answer resource records that are authoritative?
     if aa == 1:
         offset, listOfIPs = extractRRData(numOf[1], packet, offset)
     # If not, iterate over the other RR's
@@ -34,9 +32,8 @@ def unpackingResponse(packet):
         # Iterate over the Authority section, returning any Type A RR IP's
         offset, listOfIPs = extractRRData(numOf[2], packet, offset)
         # Iterate over the Additional section, returning any Type A RR IP's
-        offset, listOfIPs2 = extractRRData(numOf[3], packet, offset)
+        offset, listOfIPs = extractRRData(numOf[3], packet, offset)
         # Combine Type A RR's of Authority and Additional
-        listOfIPs.append(listOfIPs2)
 
     return listOfIPs
 
@@ -83,8 +80,9 @@ def unpackingHeader(packet):
     numOf.append(numOfAdditionalRRs[1])
     print(f'\tNumber of Additional RR\'s: {numOfAdditionalRRs[1]}')
 
-    return aa, numOf
+    return numOf
 
+# If it is an Answer, Authority, or Additional section, run a RR look-through method
 def extractRRData(numOf, packet, offset):
     # Extracting new IPs from RRs
     listOfIPs = []

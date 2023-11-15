@@ -1,32 +1,7 @@
-
-import socket
-import struct
-
 # Import our various Python methods, using the socket and struct library. 
 from packQuery import packQuery
 from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
-
-
-# def makingHTTPRequest(ip):
-
-#     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-#     s.connect(ip, 80)
-    
-#     request = f"GET/HTTP/2\r\nHost: {ip}\r\n\r\n"
-
-#     s.sendall(request.encode())
-
-#     response = b""
-#     while True:
-#         data = s.recv(1024)
-#         if not data:
-#             break
-#         response += data
-
-#     s.close()
-
-#     return response
 
 if __name__ == "__main__":
 
@@ -57,9 +32,18 @@ if __name__ == "__main__":
     dnsResponse = sendingToServer(dnsQuery, ipTLD)
 
     # Unpack response of TLD DNS
+    ipAuth = unpackingResponse(dnsResponse)
 
     # Send query to an Authoritative DNS server
+    dnsResponse = sendingToServer(dnsQuery, ipAuth)
 
-    
-    # dnsResponse = sendingToServer(dnsQuery, ipTLD)
+    # Unpack response of Authoritative DNS 
+    tmzIPs = unpackingResponse(dnsResponse)
+
+    # Arbitrarily grab one of these IPs. Can choose any; all duplicate servers of TMZ.com
+    tmsIP = tmzIPs[0]
+
+    #
+
+
     

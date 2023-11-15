@@ -7,7 +7,7 @@ def sendingToServer(packet, listOfIPs):
     
     # Test each server
     # Start the timer. Allow for a 10 second elapse
-    for IP in listOfIPs:
+    for IP in range(len(listOfIPs)):
 
         print(f'Testing server {listOfIPs[IP]}:')
         
