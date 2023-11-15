@@ -54,6 +54,9 @@ if __name__ == "__main__":
     ipTLD = unpackingResponse(dnsResponse)
 
     # Send query to a TLD DNS server
+    dnsResponse = sendingToServer(dnsQuery, ipTLD)
+
+    # Unpack response of TLD DNS
 
     # Send query to an Authoritative DNS server
 
