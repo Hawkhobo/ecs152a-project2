@@ -15,16 +15,18 @@ def makeHTTPRequest(ip):
 
         httpGET = requestLine + headerHost + headerUserAgent + blankLine
 
+        s.settimeout(1)
         s.sendall(httpGET)
 
         response = b""
+        # Parse incoming response, piece by piece, as buffer allows
         while True:
             data = s.recv(1024)
             if not data:
                 break
             response += data
     except Exception as e:
-        print(f"Error during request: {e    }")
+        print(f"Error during request: {e}")
 
     s.close()
 
