@@ -23,18 +23,21 @@ if __name__ == "__main__":
                    '193.0.14.129', '199.7.83.42', 
                    '202.12.27.33']
 
+    print("\n--Root DNS Server Request/Response--\n")
     # Send query to a root DNS server
     dnsResponse = sendingToServer(dnsQuery, rootServers)
 
     # Unpack response of root DNS
     ipTLD = unpackingResponse(dnsResponse)
 
+    print("\n--TLD DNS Server Request/Response--\n")
     # Send query to a TLD DNS server
     dnsResponse = sendingToServer(dnsQuery, ipTLD)
 
     # Unpack response of TLD DNS
     ipAuth = unpackingResponse(dnsResponse)
 
+    print("\n--Authoritative DNS Server Request/Response--\n")
     # Send query to an Authoritative DNS server
     dnsResponse = sendingToServer(dnsQuery, ipAuth)
 
@@ -43,8 +46,12 @@ if __name__ == "__main__":
 
     # Arbitrarily grab one of these IPs. Can choose any; all duplicate servers of TMZ.com
     tmzIP = tmzIPs[0]
+    print('TMZ IP: ', tmzIP)
 
-    # Build an HTTP GET packet for , and make the request
-    httpRequest = makeHTTPRequest(tmzIP)
+    # Build an HTTP GET packet for tmz.com, and make the request
+    httpResponse = makeHTTPRequest(tmzIP)
+    print(httpResponse)
+
+    # Return the response as an HTML file
 
     

@@ -3,14 +3,14 @@ import struct
 
 def unpackingResponse(packet):
 
-    print(f'Response packet: {packet}')
+    print(f'\tResponse packet: {packet}')
     
     # Extract a Resource Record of Type A, nominating a valid DNS server
     # DNS servers return a list of the next server-type in the hierarchy
     
     # Print out the header section and its contents
     # numOf contains the number of [0] Questions, [1] Answer RRs, [2] Authority RRs, [3] Additional RRs
-    print('\n--Contents of Header Section--')
+    print('\n\t--Contents of Header Section--')
     aa, numOf = unpackingHeader(packet)
  
     # Skipping Header Section. Fixed 12 bytes 
