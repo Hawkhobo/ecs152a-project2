@@ -4,6 +4,9 @@ from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
 from makeHTTPRequest import makeHTTPRequest
 
+# Use the time module to measure RTT
+from time import time
+
 if __name__ == "__main__":
 
     # Encoded tmz.com to 3 tmz 3 com 0
@@ -25,6 +28,8 @@ if __name__ == "__main__":
 
     print("\n--Root DNS Server Request/Response--\n")
     # Send query to a root DNS server
+    # Begin measuring time for RTT of DNS hierarchy traversal
+    start = time()
     dnsResponse = sendingToServer(dnsQuery, rootServers)
 
     # Unpack response of root DNS
@@ -41,6 +46,9 @@ if __name__ == "__main__":
     # Send query to an Authoritative DNS server
     dnsResponse = sendingToServer(dnsQuery, ipAuth)
 
+    # Moment final response is received, stop time, get RTT
+    end = time()
+
     # Unpack response of Authoritative DNS 
     tmzIPs = unpackingResponse(dnsResponse)
 
@@ -48,10 +56,22 @@ if __name__ == "__main__":
     tmzIP = tmzIPs[0]
     print('TMZ IP: ', tmzIP)
 
+    print(f'RTT for DNS traversal was {round(end - start, 4)} seconds')
+
+    # Start time for HTTP
+    start = time()
+
     # Build an HTTP GET packet for tmz.com, and make the request
     httpResponse = makeHTTPRequest(tmzIP)
+
+    # End time for HTTP
+    end = time()
+
+    # Our response from TMZ.com 
     print(httpResponse)
 
-    # Return the response as an HTML file
+    print(f'RTT for HTTP Request/Response to tmz.com was {round(end - start, 4)} seconds')
+
+    # Acquire the entity body (HTML object) from response and return as an HTML page
 
     
