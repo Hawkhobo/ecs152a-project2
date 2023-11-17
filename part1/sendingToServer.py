@@ -1,5 +1,8 @@
 import socket
 
+# Use the time module to measure RTT
+from time import time
+
 def sendingToServer(packet, listOfIPs):
 
     # Port 53 is reserved for the DNS Protocol 

@@ -1,4 +1,4 @@
-# Import functions
+# Import various Python methods
 from packQuery import packQuery
 from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
@@ -28,7 +28,7 @@ if __name__ == "__main__":
 
     print("\n--Root DNS Server Request/Response--\n")
     # Send query to a root DNS server
-    # Begin measuring time for RTT of local DNs resolver (root)
+    # Begin measuring time for RTT of local DNS resolver (root)
     start = time()
     dnsResponse = sendingToServer(dnsQuery, rootServers)
     end = time()
