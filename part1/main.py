@@ -1,4 +1,4 @@
-# Import our various Python methods, using the socket and struct library. 
+# Import functions
 from packQuery import packQuery
 from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
