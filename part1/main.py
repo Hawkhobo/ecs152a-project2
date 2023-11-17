@@ -28,9 +28,10 @@ if __name__ == "__main__":
 
     print("\n--Root DNS Server Request/Response--\n")
     # Send query to a root DNS server
-    # Begin measuring time for RTT of DNS hierarchy traversal
+    # Begin measuring time for RTT of local DNs resolver (root)
     start = time()
     dnsResponse = sendingToServer(dnsQuery, rootServers)
+    end = time()
 
     # Unpack response of root DNS
     ipTLD = unpackingResponse(dnsResponse)
@@ -46,9 +47,6 @@ if __name__ == "__main__":
     # Send query to an Authoritative DNS server
     dnsResponse = sendingToServer(dnsQuery, ipAuth)
 
-    # Moment final response is received, stop time, get RTT
-    end = time()
-
     # Unpack response of Authoritative DNS 
     tmzIPs = unpackingResponse(dnsResponse)
 
@@ -56,22 +54,23 @@ if __name__ == "__main__":
     tmzIP = tmzIPs[0]
     print('TMZ IP: ', tmzIP)
 
-    print(f'RTT for DNS traversal was {round(end - start, 4)} seconds')
-
-    # Start time for HTTP
-    start = time()
+    print(f'RTT for local DNS resolver (root) was {round(end - start, 4)} seconds')
 
     # Build an HTTP GET packet for tmz.com, and make the request
-    httpResponse = makeHTTPRequest(tmzIP)
-
-    # End time for HTTP
-    end = time()
+    httpResponse, httpRTT, payload = makeHTTPRequest(tmzIP)
 
     # Our response from TMZ.com 
     print(httpResponse)
 
-    print(f'RTT for HTTP Request/Response to tmz.com was {round(end - start, 4)} seconds')
+    print(f'RTT for HTTP Request/Response to tmz.com was {httpRTT} seconds')
 
     # Acquire the entity body (HTML object) from response and return as an HTML page
+    # Write the HTML text to an HTML file for the report
+    payload = payload.decode('utf-8')
 
+    # Open a writable file
+    html_file = open('tmz_payload.html', 'w', encoding='utf-8')
+
+    # Write contents to file
+    html_file.write(payload)
     
