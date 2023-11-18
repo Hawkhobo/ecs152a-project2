@@ -29,7 +29,7 @@ def sendingToServer(packet, listOfIPs, serv_name):
             print('\tFailed')
         finally:
             clientSocket.close()
-            print(f'\tRTT for {serv_name} DNS server was {round(end - start, 4)} seconds')
             break
 
+    print(f'\tRTT for {serv_name} DNS server was {round(end - start, 4)} seconds')
     return responsePacket

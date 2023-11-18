@@ -47,15 +47,15 @@ if __name__ == "__main__":
 
     # Arbitrarily grab one of these IPs. Can choose any; all duplicate servers of TMZ.com
     tmzIP = tmzIPs[0]
-    print('TMZ IP: ', tmzIP)
+    print('\nTMZ IP: ', tmzIP)
 
     # Build an HTTP GET packet for tmz.com, and make the request
     httpResponse, httpRTT, payload = makeHTTPRequest(tmzIP)
 
     # Our response from TMZ.com 
-    print(httpResponse)
+    print('\nReturned HTTP response: ', httpResponse)
 
-    print(f'RTT for HTTP Request/Response to tmz.com was {httpRTT} seconds')
+    print(f'\nRTT for HTTP Request/Response to tmz.com was {httpRTT} seconds')
 
     # Acquire the entity body (HTML object) from response and return as an HTML page
     # Write the HTML text to an HTML file for the report

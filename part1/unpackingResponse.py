@@ -26,13 +26,18 @@ def unpackingResponse(packet):
 
     # Do we have any Answer resource records that are authoritative?
     if aa == '1':
-        offset, listOfIPs = extractRRData(numOf[1], packet, offset)
+        offset, listOfAAIPs = extractRRData(numOf[1], packet, offset, 'Answer')
+         # Iterate over the Authority section, returning any Type A RR IP's
+        offset, listOfIPs = extractRRData(numOf[2], packet, offset, 'Authority')
+        # Iterate over the Additional section, returning any Type A RR IP's
+        offset, listOfIPs = extractRRData(numOf[3], packet, offset, 'Additional')
+        return listOfAAIPs
     # If not, iterate over the other RR's
     else:
         # Iterate over the Authority section, returning any Type A RR IP's
-        offset, listOfIPs = extractRRData(numOf[2], packet, offset)
+        offset, listOfIPs = extractRRData(numOf[2], packet, offset, 'Authority')
         # Iterate over the Additional section, returning any Type A RR IP's
-        offset, listOfIPs = extractRRData(numOf[3], packet, offset)
+        offset, listOfIPs = extractRRData(numOf[3], packet, offset, 'Additional')
         # Combine Type A RR's of Authority and Additional
 
     return listOfIPs
@@ -83,10 +88,12 @@ def unpackingHeader(packet):
     return aa, numOf
 
 # If it is an Answer, Authority, or Additional section, run a RR look-through method
-def extractRRData(numOf, packet, offset):
+def extractRRData(numOf, packet, offset, section):
     # Extracting new IPs from RRs
     listOfIPs = []
     # In the range of the number of resource records (could be Answer, Authoritative, or Additional)
+    print(f'\t\n--Resource Records stored in the {section} section--\n')
+    print(f'\tFormat: (TYPE, IP (or Name Server if TYPE is NS))\n')
     for _ in range (numOf):
 
         # Unpack the first 12 bytes of a given RR. The 4-tuple, and the data length of the last value (our Name Server)
@@ -101,7 +108,20 @@ def extractRRData(numOf, packet, offset):
         # Any other type is passed over, and we continue to unpack the response
         if r_type == 1 and r_class == 1:
             # Unpack RDATA, use socket method to store as IPv4 string
-            listOfIPs.append(socket.inet_ntoa(packet[r_data_start: r_data_end]))
+            ipv4 = socket.inet_ntoa(packet[r_data_start: r_data_end])
+            print(f'(A, {ipv4})')
+            listOfIPs.append(ipv4)
+        # Print out IPv6, but don't store. Only using IPV4's
+        elif r_type == 28 and r_class == 1:
+            print(f'(AAAA, {socket.inet_ntop(socket.AF_INET6, packet[r_data_start: r_data_end])})')
+        # Print out NS RRs, don't store 
+        elif r_type == 2 and r_class == 1:
+            # Some Name Servers are 4 bytes due to a compression algorithm
+            # decode() doesn't work well on these. Let decode() handle with an error exception
+            print('(NS, ', packet[r_data_start: r_data_end].decode(errors='replace'), ')')
+    
+                
+
 
         # Move to the next RR
         offset += 12 + r_data_length
