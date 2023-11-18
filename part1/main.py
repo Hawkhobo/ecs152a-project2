@@ -4,9 +4,6 @@ from sendingToServer import sendingToServer
 from unpackingResponse import unpackingResponse
 from makeHTTPRequest import makeHTTPRequest
 
-# Use the time module to measure RTT
-from time import time
-
 if __name__ == "__main__":
 
     # Encoded tmz.com to 3 tmz 3 com 0
@@ -29,23 +26,21 @@ if __name__ == "__main__":
     print("\n--Root DNS Server Request/Response--\n")
     # Send query to a root DNS server
     # Begin measuring time for RTT of local DNS resolver (root)
-    start = time()
-    dnsResponse = sendingToServer(dnsQuery, rootServers)
-    end = time()
+    dnsResponse = sendingToServer(dnsQuery, rootServers, 'root')
 
     # Unpack response of root DNS
     ipTLD = unpackingResponse(dnsResponse)
 
     print("\n--TLD DNS Server Request/Response--\n")
     # Send query to a TLD DNS server
-    dnsResponse = sendingToServer(dnsQuery, ipTLD)
+    dnsResponse = sendingToServer(dnsQuery, ipTLD, 'TLD')
 
     # Unpack response of TLD DNS
     ipAuth = unpackingResponse(dnsResponse)
 
     print("\n--Authoritative DNS Server Request/Response--\n")
     # Send query to an Authoritative DNS server
-    dnsResponse = sendingToServer(dnsQuery, ipAuth)
+    dnsResponse = sendingToServer(dnsQuery, ipAuth, 'authoritative')
 
     # Unpack response of Authoritative DNS 
     tmzIPs = unpackingResponse(dnsResponse)
@@ -53,8 +48,6 @@ if __name__ == "__main__":
     # Arbitrarily grab one of these IPs. Can choose any; all duplicate servers of TMZ.com
     tmzIP = tmzIPs[0]
     print('TMZ IP: ', tmzIP)
-
-    print(f'RTT for local DNS resolver (root) was {round(end - start, 4)} seconds')
 
     # Build an HTTP GET packet for tmz.com, and make the request
     httpResponse, httpRTT, payload = makeHTTPRequest(tmzIP)
@@ -72,5 +65,5 @@ if __name__ == "__main__":
     html_file = open('tmz_payload.html', 'w', encoding='utf-8')
 
     # Write contents to file
-    html_file.write(payload)
+    html_file.write(payload) 
     

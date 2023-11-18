@@ -8,9 +8,7 @@ def makeHTTPRequest(ip):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
     # Measure before and after 3-way handshake. Gives us 1 RTT
-    start = time()
     s.connect((ip, 80))
-    end = time()
     
     requestLine = b"GET / HTTP/1.1\r\n"
     # must be an f-string. No f-byte data type available
@@ -21,6 +19,7 @@ def makeHTTPRequest(ip):
 
     httpGET = requestLine + headerHost + headerUserAgent + blankLine
 
+    start = time()
     s.sendall(httpGET)
 
     response = b""
@@ -52,6 +51,7 @@ def makeHTTPRequest(ip):
             # Does actual length of payload match Content-Length:?
             # If not, still have more chunks to process. Otherwise break.
             if(len(payload) == content_length):
+                end = time()
                 break
 
         # Otherwise, break if no more data to return
