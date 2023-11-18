@@ -1,5 +1,3 @@
-import socket
-
 # Construct a DNS Query (packet request) given passed-in parameters
 def packQuery(question):
 
