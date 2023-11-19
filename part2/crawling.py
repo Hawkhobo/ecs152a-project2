@@ -14,53 +14,55 @@ from analysis import analysis
 # Create a browsermob server instance
 server = Server("C:/Users/chaus/AppData/Local/Programs/Python/Python312/Lib/site-packages/browsermobproxy/browsermob-proxy-2.1.4/bin/browsermob-proxy")
 server.start()
+
 proxy = server.create_proxy(params = dict(trustAllServers = True))
 
-# Create a new chromedriver instance
+# Create a new chromedriver instance. Add arguments to allow for third-party requests
 chrome_options = webdriver.ChromeOptions()
 chrome_options.add_argument("--proxy-server={}".format(proxy.proxy))
+chrome_options.add_argument('--disable-web-security')
 chrome_options.add_argument('--ignore-certificate-errors')
+chrome_options.add_argument('--disable-popup-blocking')
+chrome_options.add_argument('--disable-extensions')
+chrome_options.add_argument('--disable-third-party-cookies=false')
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--incognito')
 driver = webdriver.Chrome(options = chrome_options)
 
-# Setting the timeout for each request to 10 seconds
-driver.set_page_load_timeout(10)
+driver.delete_all_cookies()
 
-# # do crawling
-# proxy.new_har("myhar")
-# driver.get("http://www.cnn.com")
-
-# # write har file
-# with open('myhar.har', 'w') as f:
-#     f.write(json.dumps(proxy.har))
+# Setting the timeout for each request to 120 seconds
+driver.set_page_load_timeout(120)
 
 # Read top sites
 with open("C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/top-1m.csv", newline = '') as file: 
-    topSites = csv.reader(file, delimiter = ',')
+    topSites = list(csv.reader(file, delimiter = ','))
 
-# Do crawling
-proxy.new_har()
+# get the har of 1000 sites from the list
+site = 135
+sitesVisited = 130
+while sitesVisited != 1000:
 
-# Only need to get the har of top 1000
-site = 0
-sitesVisited = 0
-while sitesVisited != 5:
+    # Do crawling
+    proxy.new_har(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
 
     try:
-        driver.get(topSites[site])
+        driver.get("http://" + topSites[site][1])
 
         # write har file to json
-        with open('currentHar.har', 'w') as f:
+        with open(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', 'w') as f:
             f.write(json.dumps(proxy.har))
-
-        # parse the har file for third-party cookies, and store analytics
-        # analysis()
 
         site += 1
         sitesVisited += 1
         
-    except TimeoutException:
+    except Exception as e:
         site += 1
+        print(f'Exception at {topSites[site][1]}: {e}')
 
 # stop server and exit
 server.stop()
 driver.quit()
+
+# parse the har file for third-party cookies, and store analytics
+# analysis()
