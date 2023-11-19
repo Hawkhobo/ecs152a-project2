@@ -1,0 +1,79 @@
+Running BrowserMob Proxy using LittleProxy implementation. To revert to the legacy implementation, run the proxy with the command-line option '--use-littleproxy false'.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.$ReflectUtils$2 (file:/C:/Users/chaus/AppData/Local/Programs/Python/Python312/Lib/site-packages/browsermobproxy/browsermob-proxy-2.1.4/lib/browsermob-dist-2.1.4.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
+WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.$ReflectUtils$2
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+[INFO  2023-11-18T16:09:56,038 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2023-11-18T16:09:56,079 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2023-11-18T16:09:56,337 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2023-11-18T16:09:56,431 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2023-11-18T16:09:57,002 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2023-11-18T16:09:57,034 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Proxy listening with TCP transport 
+[INFO  2023-11-18T16:09:57,409 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
+[WARN  2023-11-18T16:09:59,452 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-0-ClientToProxyWorker-0) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-18T16:10:05,033 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (NEGOTIATING_CONNECT) [id: 0xbcb25bc4, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49965]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,037 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (NEGOTIATING_CONNECT) [id: 0x091aa782, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49944]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,052 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (NEGOTIATING_CONNECT) [id: 0xdfd71931, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49957]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,037 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (HANDSHAKING) [id: 0xb32caf26, L:0.0.0.0/0.0.0.0:49966]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,054 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (HANDSHAKING) [id: 0xb924ca1f, L:0.0.0.0/0.0.0.0:49961]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,055 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-3) (HANDSHAKING) [id: 0x1a482166, L:0.0.0.0/0.0.0.0:49952]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,152 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (NEGOTIATING_CONNECT) [id: 0xe27203ec, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49960]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,212 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x35d24580, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49942]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,217 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (NEGOTIATING_CONNECT) [id: 0xb9d7d53c, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49967]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,219 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (HANDSHAKING) [id: 0xc2f0065f, L:0.0.0.0/0.0.0.0:49968]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,227 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (NEGOTIATING_CONNECT) [id: 0x889cd4bc, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49971]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,229 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-5) (HANDSHAKING) [id: 0x9f1b1810, L:0.0.0.0/0.0.0.0:49972]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,374 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (NEGOTIATING_CONNECT) [id: 0x37887c89, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49943]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,374 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (HANDSHAKING) [id: 0x39284c53, L:0.0.0.0/0.0.0.0:49962]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,374 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-4) (HANDSHAKING) [id: 0xc24d60ae, L:0.0.0.0/0.0.0.0:49951]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,470 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (NEGOTIATING_CONNECT) [id: 0x5e4df062, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49969]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,471 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-6) (HANDSHAKING) [id: 0x8f4e6ebb, L:0.0.0.0/0.0.0.0:49978]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,596 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (NEGOTIATING_CONNECT) [id: 0xed30112a, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49973]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,596 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (NEGOTIATING_CONNECT) [id: 0xf799dc37, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49970]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,597 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-0) (HANDSHAKING) [id: 0xb78f2d5c, L:0.0.0.0/0.0.0.0:49979]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,597 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-7) (HANDSHAKING) [id: 0x3f15794f, L:0.0.0.0/0.0.0.0:49977]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,650 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (NEGOTIATING_CONNECT) [id: 0x25337212, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49974]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,651 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-1) (HANDSHAKING) [id: 0x1aed3b5e, L:0.0.0.0/0.0.0.0:49980]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:10:05,709 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (NEGOTIATING_CONNECT) [id: 0xda498291, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49975]: An IOException occurred on ClientToProxyConnection: An established connection was aborted by the software in your host machine 
+[INFO  2023-11-18T16:10:05,711 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-0-ProxyToServerWorker-2) (HANDSHAKING) [id: 0x93a31a84, L:0.0.0.0/0.0.0.0:49983]: Connection to upstream server failed java.nio.channels.ClosedChannelException: null
+	at io.netty.handler.ssl.SslHandler.channelInactive(...)(Unknown Source) ~[browsermob-dist-2.1.4.jar:?]
+
+[INFO  2023-11-18T16:51:19,243 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8082 
+[INFO  2023-11-18T16:51:19,267 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Proxy listening with TCP transport 
+[INFO  2023-11-18T16:51:19,277 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Proxy started at address: /0:0:0:0:0:0:0:0:8082 
+[WARN  2023-11-18T16:51:20,886 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-1-ClientToProxyWorker-0) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-18T16:54:29,424 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8083 
+[INFO  2023-11-18T16:54:29,434 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Proxy listening with TCP transport 
+[INFO  2023-11-18T16:54:29,435 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-26) Proxy started at address: /0:0:0:0:0:0:0:0:8083 
+[WARN  2023-11-18T16:54:30,603 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-2-ClientToProxyWorker-0) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-18T16:59:15,273 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8084 
+[INFO  2023-11-18T16:59:15,283 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Proxy listening with TCP transport 
+[INFO  2023-11-18T16:59:15,284 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-30) Proxy started at address: /0:0:0:0:0:0:0:0:8084 
+[WARN  2023-11-18T16:59:16,571 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-3-ClientToProxyWorker-0) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-18T17:01:40,200 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-31) Starting proxy at address: 0.0.0.0/0.0.0.0:8085 
+[INFO  2023-11-18T17:01:40,211 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-31) Proxy listening with TCP transport 
+[INFO  2023-11-18T17:01:40,213 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp109065770-31) Proxy started at address: /0:0:0:0:0:0:0:0:8085 
+[WARN  2023-11-18T17:01:41,590 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-4-ClientToProxyWorker-0) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 

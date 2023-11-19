@@ -7,3 +7,9 @@
 
 # We must identify the top-10 most commonly seen third-parties across all sites
 # Can probably achieve this using a map<site, number of times seen>
+
+def analysis(sites, cookies): 
+
+
+
+    return sites, cookies    
