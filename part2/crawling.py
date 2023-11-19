@@ -39,8 +39,8 @@ with open("C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/
     topSites = list(csv.reader(file, delimiter = ','))
 
 # get the har of 1000 sites from the list
-site = 135
-sitesVisited = 130
+site = 1025
+sitesVisited = 999
 while sitesVisited != 1000:
 
     # Do crawling
