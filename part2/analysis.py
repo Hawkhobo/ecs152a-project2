@@ -12,16 +12,23 @@ def analysis(har, sites, cookies, path):
     # Parse for cookie domains
     requestCookieList = []
     responseCookieList = []
+    # Parse for third party requests (using url)
+    requestURLsList = []
     entries = json_data.get('log', {}).get('entries', [])
 
     for i in range(len(entries)):
 
+        # Request cookies are interesting. Denoted by URL on request-level, not domain on cookie-level
+        # So logic differs a bit from responses
         requestCookie = entries[i].get('request', {}).get('cookies', [])
+        requestURLs = entries[i].get('request', {})
 
         for req in range(len(requestCookie)):
-            if requestCookie[req].get('domain'):
-                requestCookieList.append([requestCookie[req].get('domain'), requestCookie[req].get('name')])
+            if requestURLs[req].get('url'):
+                requestCookieList.append([requestURLs[req].get('url'), requestCookie[req].get('name')])
+                requestURLsList.append(requestURLs[req].get('url'))
             
+        # Response cookiesa are simple. Check for anything in cookies[], and return domain and name.
         responseCookie = entries[i].get('response', {}).get('cookies', [])
         
         for res in range(len(responseCookie)):
@@ -44,16 +51,17 @@ def analysis(har, sites, cookies, path):
             end = har.rfind('.')
     # second-level domain of current HAR
     siteName = har[start + 1: end]
-    # If we have very small domains, keep a `.` For instance, keeps `mi.com` from being just `mi`
+    # If we have very small domains, add a `.` For instance, keeps `mi.com` from being just `mi`
+    # Lowers false third-party classification. For instance `mi` could pair with `microsoft`, but `mi.` will not 
     if len(siteName) < 4:
-        siteName = siteName + '.'
+        siteName += '.'
     
     # Counting number of requests to third party domains. Use full web page domain provided
     end = har.rfind('.')
     har = har[start + 1: end]
     sites[har] = 0
-    for domain in cookieList:
-       if siteName not in domain[0]:
+    for url in requestURLsList:
+       if siteName not in url:
            sites[har] += 1
     
     print(f'Number of requests to third-party domains for {har}: {sites[har]}')
