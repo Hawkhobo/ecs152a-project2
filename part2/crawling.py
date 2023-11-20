@@ -54,7 +54,7 @@ sitesFailed = 0
 secondTry = False
 
 # Get the har of 1000 sites from the list
-while sitesVisited != 0:
+while sitesVisited != 1000:
 
     # Do crawling
     proxy.new_har(f'{HAR_FILE_PATH}{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
