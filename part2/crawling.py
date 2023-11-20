@@ -14,6 +14,8 @@ import os
 # Parses HAR files
 from analysis import analysis
 
+HAR_FILE_PATH = 'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/'
+
 # Create a browsermob server instance
 server = Server("C:/Users/chaus/AppData/Local/Programs/Python/Python312/Lib/site-packages/browsermobproxy/browsermob-proxy-2.1.4/bin/browsermob-proxy")
 server.start()
@@ -51,16 +53,16 @@ sitesFailed = 0
 secondTry = False
 
 # Get the har of 1000 sites from the list
-while sitesVisited != 1001:
+while sitesVisited != 0:
 
     # Do crawling
-    proxy.new_har(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
+    proxy.new_har(f'{HAR_FILE_PATH}{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
 
     try:
         driver.get("http://" + topSites[site][1])
 
         # Write har file to json
-        with open(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', 'w') as f:
+        with open(f'{HAR_FILE_PATH}{site + 1}_{topSites[site][1]}.har', 'w') as f:
             f.write(json.dumps(proxy.har))
 
         site += 1
@@ -95,10 +97,24 @@ thirdPartyCookies = {}
 # Parse the har file for third-party cookies, and store analytics
 # Run for each har file we have
 for file in range(len(harFiles)):
-    thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies)
+    thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies, HAR_FILE_PATH)
 
-# Acquire 10 largest values from thirdPartyCookies
-top10 = sorted(thirdPartyCookies.items(), key = lambda x: x[1], reverse = True)[:10]
-print(f'Our Top 10 cookies across the 1000 websites:')
+# Acquire 10 largest values from thirdPartyCookies, by domain
+# First get sum of subkeys across a given key. Returns a dictionary that has key (domain), and value (sum of subkeys)
+subKeySums = [(key, sum(subkey.values())) for key, subkey in thirdPartyCookies.items()]
+# Grab the 10 largest from the above sum of subkeys
+top10Domains = sorted(subKeySums, key = lambda x: x[1], reverse = True)[:10]
+
+print(f'\nOur Top 10 third-party domains across the 1000 websites:')
 for i in range(10):
-    print(f'\t{top10[i]}')
+    print(f'\t{top10Domains[i]}')
+
+# Now, Acquire 10 largest values from thirdPartyCookies, by name (subkey)
+top10Cookies = sorted(
+    ((key, subkey, value) for key, sub_dict in thirdPartyCookies.items() for subkey, value in sub_dict.items()),
+    key=lambda x: x[2], reverse=True)[:10]
+    
+print(f'\nOur Top 10 third-party cookies across the 1000 websites:')
+for i in range(10):
+    print(f'\t{top10Cookies[i]}')
+    

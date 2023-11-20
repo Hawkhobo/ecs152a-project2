@@ -1,9 +1,9 @@
 import json
 
-def analysis(har, sites, cookies): 
+def analysis(har, sites, cookies, path): 
 
     # Load the present har file into a JSON instance
-    with open(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{har}', 'r', encoding='utf-8') as file:
+    with open(f'{path}{har}', 'r', encoding='utf-8') as file:
         try: 
             json_data = json.load(file)
         except:
@@ -20,13 +20,13 @@ def analysis(har, sites, cookies):
 
         for req in range(len(requestCookie)):
             if requestCookie[req].get('domain'):
-                requestCookieList.append(requestCookie[req].get('domain'))
+                requestCookieList.append([requestCookie[req].get('domain'), requestCookie[req].get('name')])
             
         responseCookie = entries[i].get('response', {}).get('cookies', [])
         
         for res in range(len(responseCookie)):
             if responseCookie[res].get('domain'):
-                responseCookieList.append(responseCookie[res].get('domain'))
+                responseCookieList.append([responseCookie[res].get('domain'), responseCookie[res].get('name')])
 
     cookieList = requestCookieList + responseCookieList
 
@@ -53,18 +53,22 @@ def analysis(har, sites, cookies):
     har = har[start + 1: end]
     sites[har] = 0
     for domain in cookieList:
-       if siteName not in domain:
+       if siteName not in domain[0]:
            sites[har] += 1
     
     print(f'Number of requests to third-party domains for {har}: {sites[har]}')
 
     # Adding to current list
     for domain in cookieList:
-        if siteName not in domain:
-            if cookies.get(domain):
-                cookies[domain] += 1
+        if siteName not in domain[0]:
+            if domain[0] in cookies:
+                if domain[1] in cookies[domain[0]]:
+                    cookies[domain[0]][domain[1]] += 1
+                else:
+                    cookies[domain[0]][domain[1]] = 1
             else:
                 # Adds new key to dictionary
-                cookies[domain] = 1
+                cookies[domain[0]] = {}
+                cookies[domain[0]][domain[1]] = 1
 
-    return sites, cookies    
+    return sites, cookies  
