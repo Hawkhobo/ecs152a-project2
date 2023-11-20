@@ -8,7 +8,10 @@ from selenium.common.exceptions import TimeoutException
 import json
 import csv
 
-# Parses our HAR files
+# Use OS to grab HAR file-names for analysis()
+import os
+
+# Parses HAR files
 from analysis import analysis
 
 # Create a browsermob server instance
@@ -38,10 +41,17 @@ driver.set_page_load_timeout(120)
 with open("C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/top-1m.csv", newline = '') as file: 
     topSites = list(csv.reader(file, delimiter = ','))
 
-# get the har of 1000 sites from the list
-site = 1025
-sitesVisited = 999
-while sitesVisited != 1000:
+# Number of sites that have been tried
+site = 0
+# Number of sites that have been successfull
+sitesVisited = 0
+# Number of sites that have failed
+sitesFailed = 0
+# Has the failed site been retried
+secondTry = False
+
+# Get the har of 1000 sites from the list
+while sitesVisited != 1001:
 
     # Do crawling
     proxy.new_har(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
@@ -49,7 +59,7 @@ while sitesVisited != 1000:
     try:
         driver.get("http://" + topSites[site][1])
 
-        # write har file to json
+        # Write har file to json
         with open(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{site + 1}_{topSites[site][1]}.har', 'w') as f:
             f.write(json.dumps(proxy.har))
 
@@ -57,12 +67,38 @@ while sitesVisited != 1000:
         sitesVisited += 1
         
     except Exception as e:
-        site += 1
+
+        if secondTry == False:
+            secondTry = True
+            print("Trying site again")
+        else:
+            site += 1
+            sitesFailed += 1
+            secondTry = False
+            print("Second try failed")
+
         print(f'Exception at {topSites[site][1]}: {e}')
 
-# stop server and exit
+# Stop server and exit
 server.stop()
 driver.quit()
 
-# parse the har file for third-party cookies, and store analytics
-# analysis()
+# Sites visited
+print(f'Quitting driver. {sitesVisited} sites visited, and {sitesFailed} sites failed. \n')
+
+# Store harFile names in a list
+harFiles = os.listdir('C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles')
+
+thirdPartyPerSite = {}
+thirdPartyCookies = {}
+
+# Parse the har file for third-party cookies, and store analytics
+# Run for each har file we have
+for file in range(len(harFiles)):
+    thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies)
+
+# Acquire 10 largest values from thirdPartyCookies
+top10 = sorted(thirdPartyCookies.items(), key = lambda x: x[1], reverse = True)[:10]
+print(f'Our Top 10 cookies across the 1000 websites:')
+for i in range(10):
+    print(f'\t{top10[i]}')

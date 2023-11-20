@@ -1,35 +1,396 @@
-[INFO  2023-11-19T10:33:52,715 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
-[INFO  2023-11-19T10:33:52,848 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
-[INFO  2023-11-19T10:33:53,500 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
-[INFO  2023-11-19T10:33:53,669 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
-[INFO  2023-11-19T10:33:54,884 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
-[INFO  2023-11-19T10:33:54,935 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
-[INFO  2023-11-19T10:33:55,475 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
-[INFO  2023-11-19T10:34:02,214 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0xafd6cc40, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49943]: Bad Host http://byteoversea.com/ 
-[WARN  2023-11-19T10:34:02,923 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-0-ClientToProxyWorker-2) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
-[INFO  2023-11-19T10:34:07,651 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x9d098849, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49953]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,651 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0xdef09982, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49960]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,651 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0xbba72458, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49962]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,651 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x86086320, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49957]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,651 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x609765b1, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49961]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,652 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x6be22dd5, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49963]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,652 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0xa4156b19, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49965]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,652 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x90c160c0, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49964]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x1083c5b7, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49985]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x1dae10e2, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:50064]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0xff016652, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49998]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0x2c0ddfe9, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49984]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x11fed10e, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49999]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x42adaedf, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:50066]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x1b6846f8, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:50062]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,656 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0x7d9864b8, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49996]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0x50979e6a, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49977]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0x56151771, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49974]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0xd7534a52, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49973]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x49619ad6, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49981]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x97517943, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49979]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x65cab616, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49975]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x127d9dab, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49980]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x9d093cff, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49972]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,657 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x01e68fa4, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49983]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
-[INFO  2023-11-19T10:34:07,658 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x3d2992fc, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:49982]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:35,152 net.lightbody.bmp.proxy.Main] (main) Starting BrowserMob Proxy version 2.1.4 
+[INFO  2023-11-19T13:37:35,185 org.eclipse.jetty.util.log] (main) jetty-7.x.y-SNAPSHOT 
+[INFO  2023-11-19T13:37:35,382 org.eclipse.jetty.util.log] (main) started o.e.j.s.ServletContextHandler{/,null} 
+[INFO  2023-11-19T13:37:35,469 org.eclipse.jetty.util.log] (main) Started SelectChannelConnector@0.0.0.0:8080 
+[INFO  2023-11-19T13:37:36,067 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8081 
+[INFO  2023-11-19T13:37:36,094 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T13:37:36,456 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8081 
+[INFO  2023-11-19T13:37:40,040 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x52167bb8, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52604]: Bad Host gvt2.com:443 
+[INFO  2023-11-19T13:37:40,135 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x92aca9a5, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52606]: Bad Host gvt2.com:443 
+[WARN  2023-11-19T13:37:40,277 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-0-ClientToProxyWorker-3) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-19T13:37:42,938 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x2e7e6da7, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52645]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,938 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0xa42ad69d, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52650]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,939 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0x8a0d8eb1, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52649]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,939 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x1514bfce, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52667]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,938 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0x8b4da5ce, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52661]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,938 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x7c46129e, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52625]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,939 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0xf42a9851, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52651]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,939 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xe1de1b9b, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52653]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x2376f06c, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52665]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x5c9d6db3, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52659]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0x3dbbcb72, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52664]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x33e45cad, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52663]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x4ce781ef, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52666]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,940 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x9d04dab4, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52652]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T13:37:42,941 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-0-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xd6539c1e, L:/0:0:0:0:0:0:0:1:8081 - R:/0:0:0:0:0:0:0:1:52673]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T14:56:03,484 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8082 
+[INFO  2023-11-19T14:56:03,506 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T14:56:03,510 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8082 
+[INFO  2023-11-19T14:59:56,679 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8083 
+[INFO  2023-11-19T14:59:56,707 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T14:59:56,709 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8083 
+[INFO  2023-11-19T15:00:29,441 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8084 
+[INFO  2023-11-19T15:00:29,454 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:00:29,456 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8084 
+[INFO  2023-11-19T15:05:01,019 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8085 
+[INFO  2023-11-19T15:05:01,047 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:05:01,049 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8085 
+[INFO  2023-11-19T15:07:18,597 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8086 
+[INFO  2023-11-19T15:07:18,610 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:07:18,614 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8086 
+[INFO  2023-11-19T15:08:32,976 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8087 
+[INFO  2023-11-19T15:08:33,007 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:08:33,009 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8087 
+[INFO  2023-11-19T15:19:21,963 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8088 
+[INFO  2023-11-19T15:19:21,974 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:19:21,976 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8088 
+[INFO  2023-11-19T15:20:29,096 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8089 
+[INFO  2023-11-19T15:20:29,127 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:20:29,129 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8089 
+[INFO  2023-11-19T15:21:12,804 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8090 
+[INFO  2023-11-19T15:21:12,816 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:21:12,818 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8090 
+[INFO  2023-11-19T15:22:19,995 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8091 
+[INFO  2023-11-19T15:22:20,007 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:22:20,007 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8091 
+[INFO  2023-11-19T15:36:36,857 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8092 
+[INFO  2023-11-19T15:36:36,868 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:36:36,869 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8092 
+[INFO  2023-11-19T15:37:04,193 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8093 
+[INFO  2023-11-19T15:37:04,205 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:37:04,206 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8093 
+[INFO  2023-11-19T15:37:27,859 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8094 
+[INFO  2023-11-19T15:37:27,871 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:37:27,872 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8094 
+[INFO  2023-11-19T15:39:20,308 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8095 
+[INFO  2023-11-19T15:39:20,323 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:39:20,324 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8095 
+[INFO  2023-11-19T15:43:00,435 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8096 
+[INFO  2023-11-19T15:43:00,474 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:43:00,475 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8096 
+[INFO  2023-11-19T15:44:05,035 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8097 
+[INFO  2023-11-19T15:44:05,047 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:44:05,048 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8097 
+[INFO  2023-11-19T15:45:12,901 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8098 
+[INFO  2023-11-19T15:45:12,916 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:45:12,918 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8098 
+[INFO  2023-11-19T15:45:55,134 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8099 
+[INFO  2023-11-19T15:45:55,144 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:45:55,145 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8099 
+[INFO  2023-11-19T15:48:20,778 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8100 
+[INFO  2023-11-19T15:48:20,791 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T15:48:20,792 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8100 
+[INFO  2023-11-19T16:00:12,947 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8101 
+[INFO  2023-11-19T16:00:12,972 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:00:12,974 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8101 
+[INFO  2023-11-19T16:00:34,426 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8102 
+[INFO  2023-11-19T16:00:34,445 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:00:34,447 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8102 
+[INFO  2023-11-19T16:05:11,440 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8103 
+[INFO  2023-11-19T16:05:11,451 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:05:11,451 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8103 
+[INFO  2023-11-19T16:07:16,367 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8104 
+[INFO  2023-11-19T16:07:16,383 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:07:16,385 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8104 
+[INFO  2023-11-19T16:08:53,817 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8105 
+[INFO  2023-11-19T16:08:53,830 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:08:53,831 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8105 
+[INFO  2023-11-19T16:11:03,686 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8106 
+[INFO  2023-11-19T16:11:03,700 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:11:03,701 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8106 
+[INFO  2023-11-19T16:12:17,182 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8107 
+[INFO  2023-11-19T16:12:17,204 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:12:17,205 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8107 
+[INFO  2023-11-19T16:16:19,710 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8108 
+[INFO  2023-11-19T16:16:19,723 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:16:19,725 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8108 
+[INFO  2023-11-19T16:16:57,816 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8109 
+[INFO  2023-11-19T16:16:57,836 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T16:16:57,837 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8109 
+[INFO  2023-11-19T17:19:22,616 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8110 
+[INFO  2023-11-19T17:19:22,636 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:19:22,640 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8110 
+[INFO  2023-11-19T17:21:02,074 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8111 
+[INFO  2023-11-19T17:21:02,083 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:21:02,086 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8111 
+[INFO  2023-11-19T17:21:53,118 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8112 
+[INFO  2023-11-19T17:21:53,130 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:21:53,131 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8112 
+[INFO  2023-11-19T17:23:10,061 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8113 
+[INFO  2023-11-19T17:23:10,078 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:23:10,080 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8113 
+[INFO  2023-11-19T17:27:57,578 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8114 
+[INFO  2023-11-19T17:27:57,591 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:27:57,594 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8114 
+[INFO  2023-11-19T17:28:25,202 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8115 
+[INFO  2023-11-19T17:28:25,217 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:28:25,220 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8115 
+[INFO  2023-11-19T17:28:55,743 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8116 
+[INFO  2023-11-19T17:28:55,759 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:28:55,761 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8116 
+[INFO  2023-11-19T17:31:06,255 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8117 
+[INFO  2023-11-19T17:31:06,269 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:31:06,270 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8117 
+[INFO  2023-11-19T17:37:18,060 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8118 
+[INFO  2023-11-19T17:37:18,072 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:37:18,073 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8118 
+[INFO  2023-11-19T17:40:31,676 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8119 
+[INFO  2023-11-19T17:40:31,692 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:40:31,694 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8119 
+[INFO  2023-11-19T17:41:46,360 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Starting proxy at address: 0.0.0.0/0.0.0.0:8120 
+[INFO  2023-11-19T17:41:46,373 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:41:46,374 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-28) Proxy started at address: /0:0:0:0:0:0:0:0:8120 
+[INFO  2023-11-19T17:53:19,077 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8121 
+[INFO  2023-11-19T17:53:19,090 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:53:19,092 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8121 
+[INFO  2023-11-19T17:54:40,202 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8122 
+[INFO  2023-11-19T17:54:40,216 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:54:40,218 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8122 
+[INFO  2023-11-19T17:55:06,187 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8123 
+[INFO  2023-11-19T17:55:06,199 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:55:06,201 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8123 
+[INFO  2023-11-19T17:57:13,329 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8124 
+[INFO  2023-11-19T17:57:13,341 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:57:13,342 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8124 
+[WARN  2023-11-19T17:57:16,026 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-43-ClientToProxyWorker-1) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-19T17:57:20,098 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-43-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0xcfbc919c, L:/0:0:0:0:0:0:0:1:8124 - R:/0:0:0:0:0:0:0:1:51396]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:57:20,098 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-43-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0x3e07a59a, L:/0:0:0:0:0:0:0:1:8124 - R:/0:0:0:0:0:0:0:1:51398]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:57:20,098 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-43-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x567afd00, L:/0:0:0:0:0:0:0:1:8124 - R:/0:0:0:0:0:0:0:1:51394]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:57:20,098 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-43-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x4725bdbc, L:/0:0:0:0:0:0:0:1:8124 - R:/0:0:0:0:0:0:0:1:51400]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:57:20,159 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-43-ProxyToServerWorker-4) (DISCONNECTED) [id: 0x3d9517ca, L:0.0.0.0/0.0.0.0:51403]: Connection to upstream server failed java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[?:?]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:58) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:462) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:856) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:362) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:823) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1296) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:117) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:813) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:825) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:805) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:842) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1032) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:296) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.writeToChannel(ProxyConnection.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection$2.execute(ClientToProxyConnection.java:488) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.doProcessCurrentStep(ConnectionFlow.java:140) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.access$000(ConnectionFlow.java:14) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow$1.run(ConnectionFlow.java:124) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:73) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:418) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:454) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+
+[INFO  2023-11-19T17:57:20,206 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-43-ProxyToServerWorker-7) (HANDSHAKING) [id: 0x0f60b61d, L:0.0.0.0/0.0.0.0:51410]: Connection to upstream server failed java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[?:?]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:58) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:462) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:856) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:362) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:823) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1296) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:117) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:813) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:825) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:805) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:842) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1032) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:296) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.writeToChannel(ProxyConnection.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection$2.execute(ClientToProxyConnection.java:488) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.doProcessCurrentStep(ConnectionFlow.java:140) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.access$000(ConnectionFlow.java:14) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow$1.run(ConnectionFlow.java:124) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:73) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:418) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:454) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+
+[INFO  2023-11-19T17:57:20,218 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-43-ProxyToServerWorker-6) (HANDSHAKING) [id: 0x7157dbfe, L:0.0.0.0/0.0.0.0:51407]: Connection to upstream server failed java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[?:?]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:58) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:462) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:856) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:362) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:823) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1296) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:117) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:813) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:825) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:805) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:842) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1032) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:296) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.writeToChannel(ProxyConnection.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection$2.execute(ClientToProxyConnection.java:488) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.doProcessCurrentStep(ConnectionFlow.java:140) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.access$000(ConnectionFlow.java:14) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow$1.run(ConnectionFlow.java:124) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:73) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:418) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:454) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+
+[INFO  2023-11-19T17:57:20,240 org.littleshoot.proxy.impl.ProxyToServerConnection] (LittleProxy-43-ProxyToServerWorker-5) (HANDSHAKING) [id: 0xff594b05, L:0.0.0.0/0.0.0.0:51409]: Connection to upstream server failed java.io.IOException: An existing connection was forcibly closed by the remote host
+	at sun.nio.ch.SocketDispatcher.write0(Native Method) ~[?:?]
+	at sun.nio.ch.SocketDispatcher.write(SocketDispatcher.java:51) ~[?:?]
+	at sun.nio.ch.IOUtil.writeFromNativeBuffer(IOUtil.java:113) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:58) ~[?:?]
+	at sun.nio.ch.IOUtil.write(IOUtil.java:50) ~[?:?]
+	at sun.nio.ch.SocketChannelImpl.write(SocketChannelImpl.java:462) ~[?:?]
+	at io.netty.channel.socket.nio.NioSocketChannel.doWrite(NioSocketChannel.java:411) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:856) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.flush0(AbstractNioChannel.java:362) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:823) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1296) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelOutboundHandlerAdapter.flush(ChannelOutboundHandlerAdapter.java:115) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:779) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.flush(AbstractChannelHandlerContext.java:760) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.ChannelDuplexHandler.flush(ChannelDuplexHandler.java:117) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:787) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:813) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.write(AbstractChannelHandlerContext.java:825) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:805) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannelHandlerContext.writeAndFlush(AbstractChannelHandlerContext.java:842) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.DefaultChannelPipeline.writeAndFlush(DefaultChannelPipeline.java:1032) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.AbstractChannel.writeAndFlush(AbstractChannel.java:296) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ProxyConnection.writeToChannel(ProxyConnection.java:266) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ClientToProxyConnection$2.execute(ClientToProxyConnection.java:488) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.doProcessCurrentStep(ConnectionFlow.java:140) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow.access$000(ConnectionFlow.java:14) ~[browsermob-dist-2.1.4.jar:?]
+	at org.littleshoot.proxy.impl.ConnectionFlow$1.run(ConnectionFlow.java:124) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask$RunnableAdapter.call(PromiseTask.java:38) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.PromiseTask.run(PromiseTask.java:73) ~[browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:418) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:454) [browsermob-dist-2.1.4.jar:?]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873) [browsermob-dist-2.1.4.jar:?]
+	at java.lang.Thread.run(Thread.java:829) [?:?]
+
+[INFO  2023-11-19T17:59:48,130 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8125 
+[INFO  2023-11-19T17:59:48,138 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T17:59:48,139 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8125 
+[WARN  2023-11-19T17:59:50,698 net.lightbody.bmp.mitm.util.SslUtil] (LittleProxy-44-ClientToProxyWorker-2) Disabling upstream server certificate verification. This will allow attackers to intercept communications with upstream servers. 
+[INFO  2023-11-19T17:59:55,983 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0x106f3ac5, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51554]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,983 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x88868019, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51555]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,983 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0x18c927ed, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51624]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,984 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0xe3f30f4e, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51609]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,984 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x4b1b1ddb, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51566]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,985 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x8c999714, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51564]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,986 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x56b64495, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51580]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,986 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x796309ce, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51524]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,987 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xa1421188, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51590]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,987 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-5) (AWAITING_INITIAL) [id: 0x805c41ac, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51562]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,988 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-3) (AWAITING_INITIAL) [id: 0xf44f04ed, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51592]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,988 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x99acffe7, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51589]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,989 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xfd6212c3, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51557]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,989 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0xdd944c03, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51610]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,990 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-6) (AWAITING_INITIAL) [id: 0xf9740c7c, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51615]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,990 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-2) (AWAITING_INITIAL) [id: 0xb261432e, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51623]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,991 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-4) (AWAITING_INITIAL) [id: 0x27c5c263, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51593]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,992 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-0) (AWAITING_INITIAL) [id: 0xf27dd18c, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51619]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,992 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-7) (AWAITING_INITIAL) [id: 0x8d281539, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51616]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T17:59:55,993 org.littleshoot.proxy.impl.ClientToProxyConnection] (LittleProxy-44-ClientToProxyWorker-1) (AWAITING_INITIAL) [id: 0x44a6c091, L:/0:0:0:0:0:0:0:1:8125 - R:/0:0:0:0:0:0:0:1:51621]: An IOException occurred on ClientToProxyConnection: An existing connection was forcibly closed by the remote host 
+[INFO  2023-11-19T18:00:20,393 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Starting proxy at address: 0.0.0.0/0.0.0.0:8126 
+[INFO  2023-11-19T18:00:20,401 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy listening with TCP transport 
+[INFO  2023-11-19T18:00:20,402 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-27) Proxy started at address: /0:0:0:0:0:0:0:0:8126 
+[INFO  2023-11-19T19:34:36,293 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Starting proxy at address: 0.0.0.0/0.0.0.0:8127 
+[INFO  2023-11-19T19:34:36,321 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:34:36,330 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-30) Proxy started at address: /0:0:0:0:0:0:0:0:8127 
+[INFO  2023-11-19T19:37:55,238 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8128 
+[INFO  2023-11-19T19:37:55,271 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:37:55,273 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8128 
+[INFO  2023-11-19T19:46:44,812 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Starting proxy at address: 0.0.0.0/0.0.0.0:8129 
+[INFO  2023-11-19T19:46:44,824 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:46:44,825 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-29) Proxy started at address: /0:0:0:0:0:0:0:0:8129 
+[INFO  2023-11-19T19:49:53,049 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8130 
+[INFO  2023-11-19T19:49:53,062 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:49:53,063 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8130 
+[INFO  2023-11-19T19:50:49,589 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Starting proxy at address: 0.0.0.0/0.0.0.0:8131 
+[INFO  2023-11-19T19:50:49,602 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:50:49,603 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-26) Proxy started at address: /0:0:0:0:0:0:0:0:8131 
+[INFO  2023-11-19T19:51:26,540 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Starting proxy at address: 0.0.0.0/0.0.0.0:8132 
+[INFO  2023-11-19T19:51:26,549 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy listening with TCP transport 
+[INFO  2023-11-19T19:51:26,550 org.littleshoot.proxy.impl.DefaultHttpProxyServer] (qtp896134613-32) Proxy started at address: /0:0:0:0:0:0:0:0:8132 

@@ -1,15 +1,70 @@
+import json
 
+def analysis(har, sites, cookies): 
 
-# After running the crawler, we should have a har file containing the hars of the top 1000 sites
+    # Load the present har file into a JSON instance
+    with open(f'C:/Users/chaus/visualstudio/ECS-152A/Project2/ecs152a-project2/part2/harFiles/{har}', 'r', encoding='utf-8') as file:
+        try: 
+            json_data = json.load(file)
+        except:
+            print('death')
 
-# We must then report the number of requests made to third-party domains when visiting each site
-# A third party site is a site that does not have the same second-level domain (SLD) as the site you are visiting
+    # Parse for cookie domains
+    requestCookieList = []
+    responseCookieList = []
+    entries = json_data.get('log', {}).get('entries', [])
 
-# We must identify the top-10 most commonly seen third-parties across all sites
-# Can probably achieve this using a map<site, number of times seen>
+    for i in range(len(entries)):
 
-def analysis(sites, cookies): 
+        requestCookie = entries[i].get('request', {}).get('cookies', [])
 
+        for req in range(len(requestCookie)):
+            if requestCookie[req].get('domain'):
+                requestCookieList.append(requestCookie[req].get('domain'))
+            
+        responseCookie = entries[i].get('response', {}).get('cookies', [])
+        
+        for res in range(len(responseCookie)):
+            if responseCookie[res].get('domain'):
+                responseCookieList.append(responseCookie[res].get('domain'))
 
+    cookieList = requestCookieList + responseCookieList
+
+    commonDomains = ['.com', '.net', '.org', '.edu', '.co', '.ru', '.uk', '.jp', '.io', '.it', '.br', '.cn']
+
+    start = har.find("_")
+    # Check if the word has a common domain from web crawling
+    # If it does, we'll remove it. Otherwise, just remove .har
+    end = 0
+    for i in range(0, len(commonDomains)):
+        if har.find(commonDomains[i]) != -1:
+            end = har.find(commonDomains[i])
+            break
+        else:
+            end = har.rfind('.')
+    # second-level domain of current HAR
+    siteName = har[start + 1: end]
+    # If we have very small domains, keep a `.` For instance, keeps `mi.com` from being just `mi`
+    if len(siteName) < 4:
+        siteName = siteName + '.'
+    
+    # Counting number of requests to third party domains. Use full web page domain provided
+    end = har.rfind('.')
+    har = har[start + 1: end]
+    sites[har] = 0
+    for domain in cookieList:
+       if siteName not in domain:
+           sites[har] += 1
+    
+    print(f'Number of requests to third-party domains for {har}: {sites[har]}')
+
+    # Adding to current list
+    for domain in cookieList:
+        if siteName not in domain:
+            if cookies.get(domain):
+                cookies[domain] += 1
+            else:
+                # Adds new key to dictionary
+                cookies[domain] = 1
 
     return sites, cookies    
