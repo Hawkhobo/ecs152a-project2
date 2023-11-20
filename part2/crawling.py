@@ -30,6 +30,7 @@ chrome_options.add_argument('--ignore-certificate-errors')
 chrome_options.add_argument('--disable-popup-blocking')
 chrome_options.add_argument('--disable-extensions')
 chrome_options.add_argument('--disable-third-party-cookies=false')
+# Makes the runtime a great deal faster 
 chrome_options.add_argument('--headless')
 chrome_options.add_argument('--incognito')
 driver = webdriver.Chrome(options = chrome_options)
@@ -110,6 +111,7 @@ for i in range(10):
     print(f'\t{top10Domains[i]}')
 
 # Now, Acquire 10 largest values from thirdPartyCookies, by name (subkey)
+# Using key, subkey, and value as indexers, and a nested for loop, sorts (key, subkey, value)
 top10Cookies = sorted(
     ((key, subkey, value) for key, sub_dict in thirdPartyCookies.items() for subkey, value in sub_dict.items()),
     key=lambda x: x[2], reverse=True)[:10]
