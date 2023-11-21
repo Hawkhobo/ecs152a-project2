@@ -24,9 +24,9 @@ def analysis(har, sites, cookies, path):
         requestURLs = entries[i].get('request', {})
 
         for req in range(len(requestCookie)):
-            if requestURLs[req].get('url'):
-                requestCookieList.append([requestURLs[req].get('url'), requestCookie[req].get('name')])
-                requestURLsList.append(requestURLs[req].get('url'))
+            if requestURLs.get('url'):
+                requestCookieList.append([requestURLs.get('url'), requestCookie[req].get('name')])
+                requestURLsList.append(requestURLs.get('url'))
             
         # Response cookiesa are simple. Check for anything in cookies[], and return domain and name.
         responseCookie = entries[i].get('response', {}).get('cookies', [])
@@ -53,15 +53,15 @@ def analysis(har, sites, cookies, path):
     siteName = har[start + 1: end]
     # If we have very small domains, add a `.` For instance, keeps `mi.com` from being just `mi`
     # Lowers false third-party classification. For instance `mi` could pair with `microsoft`, but `mi.` will not 
-    if len(siteName) < 4:
+    if len(siteName) < 6:
         siteName += '.'
     
     # Counting number of requests to third party domains. Use full web page domain provided
     end = har.rfind('.')
     har = har[start + 1: end]
     sites[har] = 0
-    for url in requestURLsList:
-       if siteName not in url:
+    for domain in requestCookieList:
+       if siteName not in domain[0]:
            sites[har] += 1
     
     print(f'Number of requests to third-party domains for {har}: {sites[har]}')

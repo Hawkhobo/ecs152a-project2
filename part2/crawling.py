@@ -54,7 +54,7 @@ sitesFailed = 0
 secondTry = False
 
 # Get the har of 1000 sites from the list
-while sitesVisited != 1000:
+while sitesVisited != 0:
 
     # Do crawling
     proxy.new_har(f'{HAR_FILE_PATH}{site + 1}_{topSites[site][1]}.har', options = {'captureHeaders': True, 'captureCookies': True})
@@ -100,7 +100,7 @@ thirdPartyCookies = {}
 for file in range(len(harFiles)):
     thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies, HAR_FILE_PATH)
 
-# Acquire 10 largest values from thirdPartyCookies, by url
+# Acquire 10 largest values from thirdPartyPerSite, by url
 top10Domains = sorted(thirdPartyPerSite, key = lambda x: x[1], reverse = True)[:10]
 
 print(f'\nOur Top 10 third-party domains across the 1001 websites:')
