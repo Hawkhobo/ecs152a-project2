@@ -60,8 +60,8 @@ def analysis(har, sites, cookies, path):
     end = har.rfind('.')
     har = har[start + 1: end]
     sites[har] = 0
-    for domain in requestCookieList:
-       if siteName not in domain[0]:
+    for url in requestURLsList:
+       if siteName not in url:
            sites[har] += 1
     
     print(f'Number of requests to third-party domains for {har}: {sites[har]}')

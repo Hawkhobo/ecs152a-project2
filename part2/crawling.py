@@ -100,7 +100,7 @@ thirdPartyCookies = {}
 for file in range(len(harFiles)):
     thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies, HAR_FILE_PATH)
 
-# Acquire 10 largest values from thirdPartyPerSite, by url
+# Acquire 10 largest values from thirdPartyPerSit, by url
 top10Domains = sorted(thirdPartyPerSite, key = lambda x: x[1], reverse = True)[:10]
 
 print(f'\nOur Top 10 third-party domains across the 1001 websites:')
