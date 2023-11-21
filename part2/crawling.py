@@ -100,23 +100,21 @@ thirdPartyCookies = {}
 for file in range(len(harFiles)):
     thirdPartyPerSite, thirdPartyCookies = analysis(harFiles[file], thirdPartyPerSite, thirdPartyCookies, HAR_FILE_PATH)
 
-# Acquire 10 largest values from thirdPartyCookies, by domain
-# First get sum of subkeys across a given key. Returns a dictionary that has key (domain), and value (sum of subkeys)
-subKeySums = [(key, sum(subkey.values())) for key, subkey in thirdPartyCookies.items()]
-# Grab the 10 largest from the above sum of subkeys
-top10Domains = sorted(subKeySums, key = lambda x: x[1], reverse = True)[:10]
+# Acquire 10 largest values from thirdPartyCookies, by url
+top10Domains = sorted(thirdPartyPerSite, key = lambda x: x[1], reverse = True)[:10]
 
-print(f'\nOur Top 10 third-party domains across the 1000 websites:')
+print(f'\nOur Top 10 third-party domains across the 1001 websites:')
 for i in range(10):
     print(f'\t{top10Domains[i]}')
 
 # Now, Acquire 10 largest values from thirdPartyCookies, by name (subkey)
 # Using key, subkey, and value as indexers, and a nested for loop, sorts (key, subkey, value)
+# This allows us to return the top 10 cookies, including both their count and the domain, from the dict of dicts. 
 top10Cookies = sorted(
     ((key, subkey, value) for key, sub_dict in thirdPartyCookies.items() for subkey, value in sub_dict.items()),
     key=lambda x: x[2], reverse=True)[:10]
     
-print(f'\nOur Top 10 third-party cookies across the 1000 websites:')
+print(f'\nOur Top 10 third-party cookies across the 1001 websites:')
 for i in range(10):
     print(f'\t{top10Cookies[i]}')
     
